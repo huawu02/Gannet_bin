@@ -7,7 +7,7 @@ FROM vistalab/mcr-v90
 
 # Copy shell script and MCR binary to /bin
 COPY run_Gannet.sh /bin/run_Gannet
-COPY Gannet_v30 /bin/GannetRun
+COPY GannetRun /bin/GannetRun
 
 # change permissions 
 RUN chmod +rx /bin/run_Gannet
