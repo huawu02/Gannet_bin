@@ -1,4 +1,4 @@
-#  Source code in https://github.com/huawu02/Gannet3.0
+#  Source code in https://github.com/huawu02/Gannet2.1
 #  GABA analysis for data collected using the MEGA-PRESS sequence of CNI.
 #
 
