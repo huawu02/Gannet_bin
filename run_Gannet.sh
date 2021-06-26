@@ -7,12 +7,12 @@
 exe_name=$0
 exe_dir=`dirname "$0"`
 echo "------------------------------------------"
-#if [ "x$1" = "x" ]; then
-#  echo Usage:
-#  echo    $0 \<deployedMCRroot\> args
-#else
+if [ "x$1" = "x" ]; then
+  echo Usage:
+  echo    $0 \<deployedMCRroot\> args
+else
   echo Setting up environment variables
-  MCRROOT=/opt/mcr/v90
+  MCRROOT=/opt/mcr/v95
   echo ---
   LD_LIBRARY_PATH=.:${MCRROOT}/runtime/glnxa64 ;
   LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${MCRROOT}/bin/glnxa64 ;
@@ -20,8 +20,6 @@ echo "------------------------------------------"
   LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${MCRROOT}/sys/opengl/lib/glnxa64;
   export LD_LIBRARY_PATH;
   echo LD_LIBRARY_PATH is ${LD_LIBRARY_PATH};
-  cd $1;
-  shift 1
   args=
   while [ $# -gt 0 ]; do
       token=$1
@@ -29,6 +27,6 @@ echo "------------------------------------------"
       shift
   done
   eval "\"${exe_dir}/GannetRun\"" $args
-#fi
+fi
 exit
 
