@@ -13,9 +13,9 @@
 FROM flywheel/matlab-mcr:v95
 
 # Copy shell script and MCR binary to /bin
-COPY run_Gannet.sh /bin/run_Gannet
+COPY run /bin/run
 COPY GannetRun /bin/GannetRun
 
 # change permissions 
-RUN chmod +rx /bin/run_Gannet
+RUN chmod +rx /bin/run
 RUN chmod +x  /bin/GannetRun
