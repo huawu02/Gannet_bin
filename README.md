@@ -13,10 +13,10 @@ To build a docker image from the Dockerfile, run:
 docker build -t Gannet:v3.1 .
 ``` 
 
-To use the docker image, put the pfile from a MEGA-PRESS scan and a folder with the anatomical dicoms in the same directory (path_to_data_dir), then run:
+To use the docker image, put the pfile from a MEGA-PRESS scan and a folder with the anatomical dicoms in the same directory (datadir), then run:
 
 ```
-docker run --rm -ti -v $path_to_data_dir:/flywheel/v0/input -v $path_to_data_dir:/flywheel/v0/output \
+docker run --rm -ti -v $datadir:/flywheel/v0/input -v $datadir:/flywheel/v0/output \
 Gannet:v3.1 /bin/bash -c "cd /flywheel/v0/output; \
 /bin/run /flywheel/v0/input/$pfile $metabolite /flywheel/v0/input/$anat_dcm_dir"
 ```
